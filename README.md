@@ -4,7 +4,7 @@
 
 
 # How to Use
-- This project can be accessed by cloning the github repository onto your desktop and opening the project's HTML via **live browser or another similar extension.**
+- This project can be accessed by cloning the github repository onto your desktop and opening the project's HTML file via **live browser or another similar extension.**
 
 ```
 cd /desktop
