@@ -54,7 +54,7 @@ class Flashcard {
             let div = document.createElement("div"); 
             div.setAttribute('class', 'col s12');
              div.innerHTML = `<p>Question: ${question} </p> 
-            <p>Answer: ${question}`
+            <p>Answer: ${question}</p>`
             showNewCard.appendChild(div);
 
             // if (sub)
