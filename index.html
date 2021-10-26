@@ -20,6 +20,7 @@
     </head>
     
     <body>
+
         <div class="container" id="flashcardApp">
             <h2 id="flashcardTitle">Flashcards</h1>
             <div id="flashcardWindow">
@@ -28,15 +29,25 @@
                 <div id="card" class="flashCard row">
                         <a id="exitBtn" class="  pink lighten-4 btn-small"><i class="material-icons">clear</i></a>
                     
-                    
+                        <form id="flashcardForm">
                         <label class=" col s12 questionTitle" for="question">Question</label>
-                        <textarea id="question" ></textarea>
+                        <input class="materialize-textarea" id="question" ></textarea>
                         <br>
                         <label class="col s12 answerTitle" for="answer" >Answer</label>
-                        <textarea id="answer"></textarea>
+                        <textarea class="materialize-textarea" id="answer"></textarea>
                         
-                        <a id="submitBtn" class="waves-light btn pink lighten-4">Submit</a>
+                        <!-- <a type='submit' id="submitBtn" class="waves-light btn pink lighten-4">Submit</a> -->
+                        <button id="submitBtn" class="waves-light btn pink lighten-4" type="submit" name="action">Submit
+                    
+                        </button>
+                        </form>
                         
+                </div>
+
+                <div id="cardResults" class="flashCard row">
+      
+
+                    </div>
                 </div>
     
             </div>

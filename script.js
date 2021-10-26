@@ -1,8 +1,8 @@
 class Flashcard {
-    constructor (title, description, card) {
-        this.title = title; 
-        this.description = description; 
-        this.card = card;  
+    constructor (question, answer, id) {
+        this.question = question; 
+        this.answer = answer; 
+        this.id = id;  
     }
 
     
@@ -31,7 +31,37 @@ class Flashcard {
 
     //event listener for saving the card to the screen
 
-    saveCard() {
+    submitCard() {
+        let form = document.getElementById('flashcardForm'); 
+        let submitButton = document.getElementById('submitBtn'); 
+        let newCardSection = document.getElementById('cardResults');
+        const question = document.getElementById('question').value;
+        const answer = document.getElementById('answer').value; 
+
+        // this.question = question;
+        // this.answer = answer; 
+        console.log(question);
+
+    
+        
+
+        form.addEventListener('submit', function(event, question) {
+        event.preventDefault();
+            console.log("submitted"); 
+            let showNewCard = document.getElementById('cardResults'); 
+            showNewCard.style.visibility = 'visible';
+
+            let div = document.createElement("div"); 
+            div.setAttribute('class', 'col s12');
+             div.innerHTML = `<p>Question: ${question} </p> 
+            <p>Answer: ${question}`
+            showNewCard.appendChild(div);
+
+            // if (sub)
+            // let clonedCard = flashCard.cloneNode(true); 
+            // newCardSection.appendChild(clonedCard);
+            
+        })
 
     }
 
@@ -57,3 +87,4 @@ let newCard = new Flashcard();
 // newCard.addTitle(); 
 newCard.addCard(); 
 newCard.removeCard(); 
+newCard.submitCard();
