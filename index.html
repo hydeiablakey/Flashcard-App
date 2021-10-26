@@ -11,26 +11,37 @@
 
      <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-             
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
     <title>Week 6: Flashcard Project</title>
     </head>
+    
     <body>
-        <div id="flashcardApp">
+        <div class="container" id="flashcardApp">
             <h2 id="flashcardTitle">Flashcards</h1>
             <div id="flashcardWindow">
-                <a class="waves-effect waves-light btn-large pink lighten-4"><i class="material-icons">add</i></a>
+                <a id="addBtn" class="waves-effect waves-light btn-large pink lighten-4"><i class="material-icons">add</i></a>
 
-                <div class="flashCard">
-                        <label for="question">Question</label>
-                        <textarea id="question" maxlength="280"></textarea>
+                <div id="card" class="flashCard row">
+                        <a id="exitBtn" class="  pink lighten-4 btn-small"><i class="material-icons">clear</i></a>
+                    
+                    
+                        <label class=" col s12 questionTitle" for="question">Question</label>
+                        <textarea id="question" ></textarea>
                         <br>
-                        <label for="answer" maxlength="280">Answer</label>
+                        <label class="col s12 answerTitle" for="answer" >Answer</label>
                         <textarea id="answer"></textarea>
+                        
+                        <a id="submitBtn" class="waves-light btn pink lighten-4">Submit</a>
+                        
                 </div>
     
             </div>
         </div>
-        
+
     <script src="script.js"></script>
     </body>
     </html>

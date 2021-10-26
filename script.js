@@ -6,14 +6,40 @@ class Flashcard {
     }
 
     
-    // event listener button for adding a new flashcard
+    // event listener button for adding/creating a new flashcard
     addCard() {
+        let addButton = document.getElementById('addBtn');
+        addButton.addEventListener('click', function() {
+            let showCard = document.getElementById('card');
+            // console.log('i am being pressed');
+            showCard.style.visibility = 'visible';
+
+        } )
 
     }
-    //create a popup window after a button click
-    modal() {
+
+    //event listener button for removing/deleting the card 
+    removeCard(){
+        let removeButton = document.getElementById('exitBtn');
+        removeButton.addEventListener('click', function () {
+            let removeCard = document.getElementById('card'); 
+            removeCard.style.visibility = 'hidden';
+           
+        })
 
     }
+
+    //event listener for saving the card to the screen
+
+    saveCard() {
+
+    }
+
+
+    // //create a popup window after a button click
+    // modal() {
+
+    // }
 
     addTitle() {
         let personPrompt = prompt("Enter your name to personalize your flashcards or leave blank for generic name.")
@@ -29,3 +55,5 @@ class Flashcard {
 
 let newCard = new Flashcard(); 
 // newCard.addTitle(); 
+newCard.addCard(); 
+newCard.removeCard(); 

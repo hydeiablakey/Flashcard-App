@@ -14,3 +14,63 @@ body {
     background-color: var(--lighestpink);
 }
 
+/* #flashCardApp {
+    text-align: center;
+    
+} */
+#flashcardTitle {
+    font-size: 3.5em;
+}
+
+.flashCard {
+    border: 2px solid var(--darkpink);
+    background-color: var(--lightpink);
+    padding: 10px;
+    margin: 10px;
+    width: 400px; 
+    height: 100%;
+    border-radius: 0.25rem;
+    font-family: 'Lato', sans-serif;
+    visibility:hidden;
+
+    
+}
+
+.questionTitle, .answerTitle {
+    color: black; 
+    font-size:20px;
+    font-family: 'Lato', sans-serif;
+
+    
+}
+
+textarea {
+    max-width: 100%; 
+    max-height: 45%;
+    border-radius: 0.25rem;
+    border: 2px solid var(--darkpink);
+}
+
+#submitBtn {
+    /* display: block; */
+    width:100%;
+    margin-top: 10px;
+    border: 2px solid var(--darkpink);
+    color: black;
+}
+
+#addBtn {
+    border: 2px solid var(--darkpink);
+    color: black;
+}
+
+#exitBtn {
+    border: 1px solid var(--darkpink);
+    float: right; 
+
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: black;
+}
