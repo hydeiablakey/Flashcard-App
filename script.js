@@ -14,6 +14,18 @@ class Flashcard {
     modal() {
 
     }
+
+    addTitle() {
+        let personPrompt = prompt("Enter your name to personalize your flashcards or leave blank for generic name.")
+        let newTitle = document.getElementById("flashcardTitle");
+        if (personPrompt === "") {
+            newTitle.innerHTML = `Flashcards`;
+        } else {
+            newTitle.innerHTML = `${personPrompt}'s Flashcards`
+
+        }
+    }
 }
 
 let newCard = new Flashcard(); 
+// newCard.addTitle(); 

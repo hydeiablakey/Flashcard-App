@@ -1,0 +1,16 @@
+/* #flashcardWindow {
+    padding: 5px;
+} */
+
+:root {
+    --darkpink: #FF9292; 
+    --mediumpink: #FFB4B4;
+    --lightpink: #FFDCDC;
+    --lighestpink: #FFE8E8; 
+}
+
+body {
+    padding: 5px;
+    background-color: var(--lighestpink);
+}
+
