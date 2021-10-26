@@ -1,11 +1,13 @@
 class Flashcard {
-    constructor (card) {
-        this.card = card; 
+    constructor (title, description, card) {
+        this.title = title; 
+        this.description = description; 
+        this.card = card;  
     }
 
     
     // event listener button for adding a new flashcard
-    addModal() {
+    addCard() {
 
     }
     //create a popup window after a button click
@@ -13,3 +15,5 @@ class Flashcard {
 
     }
 }
+
+let newCard = new Flashcard(); 
