@@ -48,8 +48,8 @@ class Flashcard {
     submitCard() {
 
         let form = document.getElementById('flashcardForm'); 
-        const question = document.getElementById('question');
-        const answer = document.getElementById('answer');  
+        let question = document.getElementById('question');
+        let answer = document.getElementById('answer');  
 
         let idVal = Math.floor(Math.random() * 100);
 
@@ -60,7 +60,7 @@ class Flashcard {
             let showNewCard = document.getElementById('cardResults'); 
             showNewCard.style.visibility = 'visible';
 
-            const key = question.value; 
+            let key = question.value; 
             const value = answer.value;
           
 
@@ -68,6 +68,7 @@ class Flashcard {
             console.log(`Answer: ${value}`); 
 
             if (key && value) {  
+
             let flashID = idVal++; //Updating the id of each card submitted
       
 
