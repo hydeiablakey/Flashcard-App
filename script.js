@@ -35,17 +35,18 @@ class Flashcard {
         let form = document.getElementById('flashcardForm'); 
         let submitButton = document.getElementById('submitBtn'); 
         let newCardSection = document.getElementById('cardResults');
-        const question = document.getElementById('question').value;
-        const answer = document.getElementById('answer').value; 
+        const question = document.getElementById('question');
+        // const answer = document.getElementById('answer').value; 
 
         // this.question = question;
         // this.answer = answer; 
-        console.log(question);
+
+  
 
     
         
 
-        form.addEventListener('submit', function(event, question) {
+        form.addEventListener('submit', function(event) {
         event.preventDefault();
             console.log("submitted"); 
             let showNewCard = document.getElementById('cardResults'); 
@@ -54,7 +55,7 @@ class Flashcard {
             let div = document.createElement("div"); 
             div.setAttribute('class', 'col s12');
              div.innerHTML = `<p>Question: ${question} </p> 
-            <p>Answer: ${question}</p>`
+            <p>Answer: ${answer}</p>`
             showNewCard.appendChild(div);
 
             // if (sub)
