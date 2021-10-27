@@ -27,22 +27,7 @@ class Flashcard {
 
     }
 
-    // removeIndivdualCard() {
-    //     let deleteButton = document.getElementById('delBtn');
-    //     let newCardSection = document.getElementById('cardResults');
 
-    //     deleteButton.addEventListener('click', function() {
-    //         let deleteIndivCard = document.getElementById('newCard');
-    //         newCardSection.removeChild(deleteIndivCard); 
-    //     })
-
-
-    // }
-
-    // showAnswer() {
-    //     let revealBtn = document.getElementById('showBtn'); 
-
-    // }
     //event listener for saving the card to the screen
 
     submitCard() {

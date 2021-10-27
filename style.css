@@ -1,6 +1,10 @@
 /* #flashcardWindow {
     padding: 5px;
 } */
+html {
+    cursor:url('pink.cur'), default;
+}
+
 
 :root {
     --darkpink: #FF9292; 
@@ -12,6 +16,7 @@
 body {
     padding: 5px;
     background-color: var(--lighestpink);
+
 }
 
 /* #flashCardApp {
@@ -66,6 +71,7 @@ body {
     
 }
 
+
 .questionTitle, .answerTitle {
     color: black; 
     font-size:20px;
@@ -73,6 +79,7 @@ body {
 
     
 }
+
 
 textarea, input {
     max-width: 100%; 
@@ -103,8 +110,12 @@ textarea, input {
     float: right; 
 
     background-repeat: no-repeat;
-    cursor: pointer;
     overflow: hidden;
     outline: none;
     color: black;
+}
+
+.flashCard:hover, .answerTitle:hover, .questionTitle:hover, .newCard:hover,  #submitBtn:hover, #exitBtn:hover, #addBtn:hover {
+    cursor:url('pink_select.cur'), default;
+
 }
