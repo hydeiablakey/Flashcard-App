@@ -1,19 +1,9 @@
 class Flashcard {
-    constructor (id) {
+    constructor (id, question, answer) {
         this.id = id;  
+        this.question =question; 
+        this.answer = answer; 
     }
-
-    getId() {
-        return this.id
-    }
-
-    setId(cardId) {
-       this.id = cardId; 
-    
-
-
-    }
-
     // event listener button for adding/creating a new flashcard
     addCard() {
         let addButton = document.getElementById('addBtn');
@@ -47,6 +37,8 @@ class Flashcard {
         const question = document.getElementById('question');
         const answer = document.getElementById('answer');  
 
+        let idVal = Math.floor(Math.random() * 100);
+
         
 
         form.addEventListener('submit', function(event) {
@@ -61,37 +53,34 @@ class Flashcard {
             console.log(key); 
             console.log(value); 
     
-            if ( key && value ) {
-                
-                localStorage.setItem("question", key);
-                localStorage.setItem("Answer", value);
-                localStorage.setItem("id", this.id)
+            // if ( key && value ) {
+            //     idVal++
+            //     localStorage.setItem("question", key);
+            //     localStorage.setItem("Answer", value);
+            //     localStorage.setItem("id", idVal)
     
-            }
+            // }
 
 
 
-            console.log("submitted"); 
-
+         
+            idVal++; //Updating the id of each card submitted
+            let flashWindow = document.getElementById('flashcardWindow');
             let div = document.createElement("div"); 
-            div.setAttribute('class', 'col s12');
-             div.innerHTML = `<p>Question: ${key} </p> 
-            <p>Answer: ${value}</p>`
+            div.setAttribute('class', 'col s6');
+            div.setAttribute('id', idVal);
+            div.innerHTML = `<div> 
+             <p> Question: ${key}</p>  
+            <p>Answer: ${value}</p>
+            </div>`
             showNewCard.appendChild(div);
 
-            // if (sub)
-            // let clonedCard = flashCard.cloneNode(true); 
-            // newCardSection.appendChild(clonedCard);
+
             
         })
 
     }
 
-
-    // //create a popup window after a button click
-    // modal() {
-
-    // }
 
     addTitle() {
         let personPrompt = prompt("Enter your name to personalize your flashcards or leave blank for generic name.")
@@ -107,8 +96,8 @@ class Flashcard {
 
 let newCard = new Flashcard(); 
 // newCard.addTitle(); 
-newCard.setId(Math.floor(Math.random() * 100)); 
-console.log(newCard.getId());
+// newCard.setId(Math.floor(Math.random() * 100)); 
+// // console.log(newCard.getId());
 newCard.addCard(); 
 newCard.removeCard(); 
 newCard.submitCard();
