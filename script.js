@@ -27,13 +27,27 @@ class Flashcard {
 
     }
 
+    // removeIndivdualCard() {
+    //     let deleteButton = document.getElementById('delBtn');
+    //     let newCardSection = document.getElementById('cardResults');
+
+    //     deleteButton.addEventListener('click', function() {
+    //         let deleteIndivCard = document.getElementById('newCard');
+    //         newCardSection.removeChild(deleteIndivCard); 
+    //     })
+
+
+    // }
+
+    // showAnswer() {
+    //     let revealBtn = document.getElementById('showBtn'); 
+
+    // }
     //event listener for saving the card to the screen
 
     submitCard() {
 
         let form = document.getElementById('flashcardForm'); 
-        let submitButton = document.getElementById('submitBtn'); 
-        let newCardSection = document.getElementById('cardResults');
         const question = document.getElementById('question');
         const answer = document.getElementById('answer');  
 
@@ -50,33 +64,31 @@ class Flashcard {
             const value = answer.value;
           
 
-            console.log(key); 
-            console.log(value); 
-    
-            // if ( key && value ) {
-            //     idVal++
-            //     localStorage.setItem("question", key);
-            //     localStorage.setItem("Answer", value);
-            //     localStorage.setItem("id", idVal)
-    
-            // }
+            console.log(`Question: ${key}`); 
+            console.log(`Answer: ${value}`); 
 
+            if (key && value) {  
+            let flashID = idVal++; //Updating the id of each card submitted
+      
 
-
-         
-            idVal++; //Updating the id of each card submitted
-            let flashWindow = document.getElementById('flashcardWindow');
             let div = document.createElement("div"); 
             div.setAttribute('class', 'col s6');
-            div.setAttribute('id', idVal);
-            div.innerHTML = `<div> 
-             <p> Question: ${key}</p>  
-            <p>Answer: ${value}</p>
-            </div>`
+            div.setAttribute('id', flashID);
+            div.innerHTML = 
+            `   <div id="newCard" class="newCard row"> 
+                <p class="keyTitle"> ${key}</p> 
+                <p class="keyAnswer"> ${value}</p>
+
+                <a id="showBtn" class="col s4 waves-effect waves-light btn pink lighten-4">Reveal</a>
+                <a id="delBtn" class="col s4 waves-effect waves-light btn pink lighten-4">Delete</a>
+                </div> `
+
             showNewCard.appendChild(div);
 
+            } else {
+                alert('You need either a question or an answer to create a flashcard!')
+            }
 
-            
         })
 
     }
@@ -96,8 +108,6 @@ class Flashcard {
 
 let newCard = new Flashcard(); 
 // newCard.addTitle(); 
-// newCard.setId(Math.floor(Math.random() * 100)); 
-// // console.log(newCard.getId());
 newCard.addCard(); 
 newCard.removeCard(); 
 newCard.submitCard();
