@@ -1,11 +1,19 @@
 class Flashcard {
-    constructor (question, answer, id) {
-        this.question = question; 
-        this.answer = answer; 
+    constructor (id) {
         this.id = id;  
     }
 
+    getId() {
+        return this.id
+    }
+
+    setId(cardId) {
+       this.id = cardId; 
     
+
+
+    }
+
     // event listener button for adding/creating a new flashcard
     addCard() {
         let addButton = document.getElementById('addBtn');
@@ -32,30 +40,43 @@ class Flashcard {
     //event listener for saving the card to the screen
 
     submitCard() {
+
         let form = document.getElementById('flashcardForm'); 
         let submitButton = document.getElementById('submitBtn'); 
         let newCardSection = document.getElementById('cardResults');
         const question = document.getElementById('question');
-        // const answer = document.getElementById('answer').value; 
+        const answer = document.getElementById('answer');  
 
-        // this.question = question;
-        // this.answer = answer; 
-
-  
-
-    
         
 
         form.addEventListener('submit', function(event) {
         event.preventDefault();
-            console.log("submitted"); 
             let showNewCard = document.getElementById('cardResults'); 
             showNewCard.style.visibility = 'visible';
 
+            const key = question.value; 
+            const value = answer.value;
+          
+
+            console.log(key); 
+            console.log(value); 
+    
+            if ( key && value ) {
+                
+                localStorage.setItem("question", key);
+                localStorage.setItem("Answer", value);
+                localStorage.setItem("id", this.id)
+    
+            }
+
+
+
+            console.log("submitted"); 
+
             let div = document.createElement("div"); 
             div.setAttribute('class', 'col s12');
-             div.innerHTML = `<p>Question: ${question} </p> 
-            <p>Answer: ${answer}</p>`
+             div.innerHTML = `<p>Question: ${key} </p> 
+            <p>Answer: ${value}</p>`
             showNewCard.appendChild(div);
 
             // if (sub)
@@ -86,6 +107,8 @@ class Flashcard {
 
 let newCard = new Flashcard(); 
 // newCard.addTitle(); 
+newCard.setId(Math.floor(Math.random() * 100)); 
+console.log(newCard.getId());
 newCard.addCard(); 
 newCard.removeCard(); 
 newCard.submitCard();
