@@ -27,6 +27,7 @@ class Flashcard {
 
     }
 
+ 
 
     //event listener for saving the card to the screen
 
@@ -35,8 +36,9 @@ class Flashcard {
         let form = document.getElementById('flashcardForm'); 
         let question = document.getElementById('question');
         let answer = document.getElementById('answer');  
+        let delButton = document.getElementById('delBtn'); 
 
-        let idVal = Math.floor(Math.random() * 100);
+    
 
         
 
@@ -44,22 +46,21 @@ class Flashcard {
         event.preventDefault();
             let showNewCard = document.getElementById('cardResults'); 
             showNewCard.style.visibility = 'visible';
-
+            let removedValues = []; 
+            let idVal = Math.floor(Math.random() * 100);
             let key = question.value; 
             const value = answer.value;
           
 
             console.log(`Question: ${key}`); 
             console.log(`Answer: ${value}`); 
+            console.log(`Id: ${idVal}`);
 
             if (key && value) {  
 
-            let flashID = idVal++; //Updating the id of each card submitted
-      //onmouseover 
-
             let div = document.createElement("div"); 
             div.setAttribute('class', 'col s6');
-            div.setAttribute('id', flashID);
+            div.setAttribute('id', idVal);
             div.innerHTML = 
             `   <div id="newCard" class="newCard row"> 
                 <p class="keyQuestion"> ${key}</p> 
@@ -67,6 +68,18 @@ class Flashcard {
                 </div> `
 
             showNewCard.appendChild(div);
+
+            removedValues.push(idVal); 
+     
+
+            delButton.addEventListener('click', function(e) {
+                e.preventDefault(); 
+
+                while (showNewCard.firstChild) {
+                    showNewCard.removeChild(showNewCard.firstChild)
+                }
+              
+            })
 
             } else {
                 alert('You need either a question or an answer to create a flashcard!')
@@ -94,3 +107,4 @@ let newCard = new Flashcard();
 newCard.addCard(); 
 newCard.removeCard(); 
 newCard.submitCard();
+
