@@ -42,16 +42,11 @@ class Flashcard {
         event.preventDefault();
             let showNewCard = document.getElementById('cardResults'); 
             showNewCard.style.visibility = 'visible';
-            let removedValues = []; 
+
             let idVal = Math.floor(Math.random() * 100);
             let key = question.value; 
             const value = answer.value;
           
-
-            console.log(`Question: ${key}`); 
-            console.log(`Answer: ${value}`); 
-            console.log(`Id: ${idVal}`);
-
             if (key && value) {  
 
             let div = document.createElement("div"); 
@@ -65,8 +60,7 @@ class Flashcard {
 
             showNewCard.appendChild(div);
 
-            removedValues.push(idVal); //attempting to save the id values to remove them later based on ID. 
-    
+           
 
             delButton.addEventListener('click', function(e) {
                 e.preventDefault(); 
@@ -87,7 +81,7 @@ class Flashcard {
 
 
     addTitle() {
-        let personPrompt = prompt("Enter your name to personalize your flashcards or leave blank for generic name.")
+        let personPrompt = prompt("Enter your name to personalize your flashcard title or leave blank for generic name.")
         let newTitle = document.getElementById("flashcardTitle");
         if (personPrompt === "") {
             newTitle.innerHTML = `Flashcards`;
@@ -99,7 +93,7 @@ class Flashcard {
 }
 
 let newCard = new Flashcard(); 
-// newCard.addTitle(); 
+newCard.addTitle(); 
 newCard.addCard(); 
 newCard.removeCard(); 
 newCard.submitCard();
