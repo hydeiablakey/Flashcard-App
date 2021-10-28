@@ -38,10 +38,6 @@ class Flashcard {
         let answer = document.getElementById('answer');  
         let delButton = document.getElementById('delBtn'); 
 
-    
-
-        
-
         form.addEventListener('submit', function(event) {
         event.preventDefault();
             let showNewCard = document.getElementById('cardResults'); 
@@ -69,8 +65,8 @@ class Flashcard {
 
             showNewCard.appendChild(div);
 
-            removedValues.push(idVal); 
-     
+            removedValues.push(idVal); //attempting to save the id values to remove them later based on ID. 
+    
 
             delButton.addEventListener('click', function(e) {
                 e.preventDefault(); 
