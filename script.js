@@ -55,18 +55,15 @@ class Flashcard {
             if (key && value) {  
 
             let flashID = idVal++; //Updating the id of each card submitted
-      
+      //onmouseover 
 
             let div = document.createElement("div"); 
             div.setAttribute('class', 'col s6');
             div.setAttribute('id', flashID);
             div.innerHTML = 
             `   <div id="newCard" class="newCard row"> 
-                <p class="keyTitle"> ${key}</p> 
+                <p class="keyQuestion"> ${key}</p> 
                 <p class="keyAnswer"> ${value}</p>
-
-                <a id="showBtn" class="col s4 waves-effect waves-light btn pink lighten-4">Reveal</a>
-                <a id="delBtn" class="col s4 waves-effect waves-light btn pink lighten-4">Delete</a>
                 </div> `
 
             showNewCard.appendChild(div);
