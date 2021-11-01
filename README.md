@@ -12,10 +12,9 @@ git clone git@github.com:hydeiablakey/Week-6-Project.git
 
 ```
 
-# Languages/Frameworks Utilized
+# Built With
 
-- Javascript
-- Materialize
+* [Materialize](https://materializecss.com/)
 
 
 # Functionality RoadMap
