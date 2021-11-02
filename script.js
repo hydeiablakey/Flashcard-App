@@ -46,27 +46,30 @@ class Flashcard {
             showNewCard.style.visibility = 'visible';
 
             let idVal = Math.floor(Math.random() * 100);
+
             let key = question.value; 
             const value = answer.value;
           
             if (key && value) {  
 
             let div = document.createElement("div"); 
-            div.setAttribute('class', 'col s6');
+            div.setAttribute('class', 'col-6');
             div.setAttribute('id', idVal);
             div.innerHTML = 
             `   <div class="newCard row">
-                <p class="keyQuestion "> ${key}</p>
-                <p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${idVal}" aria-expanded="false" aria-controls="collapseExample${idVal}">
-                Show answer
-              </button>
-              </p>
-              <div class="collapse" id="collapseExample${idVal}">
-                <div class="card card-body">
-                 ${value}
-                </div>
-              </div>
+
+                    <p class="keyQuestion "> ${key}</p>
+                
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${idVal}" aria-expanded="false" aria-controls="collapseExample${idVal}">
+                    Show answer
+                    </button>
+                
+                    <div class="collapse" id="collapseExample${idVal}">
+                        <div class="card card-body">
+                        ${value}
+                        </div>
+                    </div>
+
                 </div> `
 
 
