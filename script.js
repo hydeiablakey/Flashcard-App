@@ -53,14 +53,28 @@ class Flashcard {
             div.setAttribute('class', 'col s6');
             div.setAttribute('id', idVal);
             div.innerHTML = 
-            `   <div id="newCard" class="newCard row"> 
+            `   <div class="newCard row"> 
                 <p class="keyQuestion"> ${key}</p> 
                 <p class="keyAnswer"> ${value}</p>
                 </div> `
 
             showNewCard.appendChild(div);
-
+        
            
+            console.log(document.getElementsByClassName("newCard")); 
+            //error: is not a function 
+            document.getElementsByClassName("newCard").addEventListener("click", () => {
+            let x =  document.querySelectorAll(".keyAnswer");
+            
+            if(x.style.display === "none"){
+                x.style.display = "block";
+            } else {
+                x.style.display = "none"
+            }
+        })
+
+         
+
 
             delButton.addEventListener('click', function(e) {
                 e.preventDefault(); 
@@ -80,20 +94,20 @@ class Flashcard {
     }
 
 
-    addTitle() {
-        let personPrompt = prompt("Enter your name to personalize your flashcard title or leave blank for generic name.")
-        let newTitle = document.getElementById("flashcardTitle");
-        if (personPrompt === "") {
-            newTitle.innerHTML = `Flashcards`;
-        } else {
-            newTitle.innerHTML = `${personPrompt}'s Flashcards`
+    // addTitle() {
+    //     let personPrompt = prompt("Enter your name to personalize your flashcard title or leave blank for generic name.")
+    //     let newTitle = document.getElementById("flashcardTitle");
+    //     if (personPrompt === "") {
+    //         newTitle.innerHTML = `Flashcards`;
+    //     } else {
+    //         newTitle.innerHTML = `${personPrompt}'s Flashcards`
 
-        }
-    }
+    //     }
+    // }
 }
 
 let newCard = new Flashcard(); 
-newCard.addTitle(); 
+// newCard.addTitle(); 
 newCard.addCard(); 
 newCard.removeCard(); 
 newCard.submitCard();
