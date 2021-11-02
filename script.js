@@ -1,3 +1,4 @@
+
 class Flashcard {
     constructor (id, question, answer) {
         this.id = id;  
@@ -5,6 +6,7 @@ class Flashcard {
         this.answer = answer; 
     }
     // event listener button for adding/creating a new flashcard
+
     addCard() {
         let addButton = document.getElementById('addBtn');
         addButton.addEventListener('click', function() {
@@ -53,27 +55,36 @@ class Flashcard {
             div.setAttribute('class', 'col s6');
             div.setAttribute('id', idVal);
             div.innerHTML = 
-            `   <div class="newCard row"> 
-                <p class="keyQuestion"> ${key}</p> 
-                <p class="keyAnswer"> ${value}</p>
+            `   <div class="newCard row collapsible">
+                <p class="keyQuestion collapsible-header"> ${key}</p>
+                <p class="keyAnswer collapsible-body"> ${value}</p>
                 </div> `
 
-            showNewCard.appendChild(div);
-        
-           
-            console.log(document.getElementsByClassName("newCard")); 
-            //error: is not a function 
-            document.getElementsByClassName("newCard").addEventListener("click", () => {
-            let x =  document.querySelectorAll(".keyAnswer");
-            
-            if(x.style.display === "none"){
-                x.style.display = "block";
-            } else {
-                x.style.display = "none"
-            }
-        })
 
-         
+            showNewCard.appendChild(div);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.collapsible');
+                var instances = M.Collapsible.init(elems, options);
+              });
+        
+          //only toggles first element..  
+            // let card = document.querySelectorAll(".newCard");
+
+            // for (let i=0; i < card.length; i++) {
+            //   card[i].addEventListener('click', textToggle)
+            // }
+            
+            
+            // function textToggle() { 
+            // let answerEl = document.querySelector('.keyAnswer');
+            //   if (answerEl.style.display === "block") {
+            //     answerEl.style.display = "none";
+            //   } else {
+            //      answerEl.style.display = "block";
+            //   }
+            // }
+
 
 
             delButton.addEventListener('click', function(e) {
