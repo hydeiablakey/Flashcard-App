@@ -14,7 +14,7 @@ git clone git@github.com:hydeiablakey/Week-6-Project.git
 
 # Built With
 
-* [Materialize](https://materializecss.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
 
 # Functionality RoadMap
@@ -23,6 +23,6 @@ git clone git@github.com:hydeiablakey/Week-6-Project.git
 - [x] Display question and answer on each flashcard
 - [x] Error handling for blank submissions
 - [x] Ability to hide initial flashcard module
-- [] Ability to hide the answer with a toggle feature to reveal
+- [x] Ability to hide the answer with a toggle feature to reveal
 - [] Clear Text Area after submitting question and answer
 - [] Ability to delete a specific card instead of all cards
