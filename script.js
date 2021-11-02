@@ -55,19 +55,23 @@ class Flashcard {
             div.setAttribute('class', 'col s6');
             div.setAttribute('id', idVal);
             div.innerHTML = 
-            `   <div class="newCard row collapsible">
-                <p class="keyQuestion collapsible-header"> ${key}</p>
-                <p class="keyAnswer collapsible-body"> ${value}</p>
+            `   <div class="newCard row">
+                <p class="keyQuestion "> ${key}</p>
+                <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${idVal}" aria-expanded="false" aria-controls="collapseExample${idVal}">
+                Show answer
+              </button>
+              </p>
+              <div class="collapse" id="collapseExample${idVal}">
+                <div class="card card-body">
+                 ${value}
+                </div>
+              </div>
                 </div> `
 
 
             showNewCard.appendChild(div);
 
-            document.addEventListener('DOMContentLoaded', function() {
-                var elems = document.querySelectorAll('.collapsible');
-                var instances = M.Collapsible.init(elems, options);
-              });
-        
           //only toggles first element..  
             // let card = document.querySelectorAll(".newCard");
 
