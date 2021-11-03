@@ -2,7 +2,7 @@
 
 - This Flashcard application was a **class project** where we were tasked with creating a Javascript flash card application with OOP principles but without the usage of Jquery.
 
--  [An application preview can be viewed here](photos/app_screenshot.png)
+-  [A preview of my application can be viewed here](photos/app_screenshot.png)
 
 
 
