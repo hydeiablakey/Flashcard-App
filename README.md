@@ -1,6 +1,11 @@
 # About the Project
 
-- This project was a **class assignment** where we were tasked with creating a Javascript flash card application with OOP principles but without the usage of Jquery. 
+- This Flashcard application was a **class project** where we were tasked with creating a Javascript flash card application with OOP principles but without the usage of Jquery.
+
+-  [An application preview can be viewed here](photos/app_screenshot.png)
+
+
+
 
 
 # Getting Started
@@ -14,7 +19,7 @@ git clone git@github.com:hydeiablakey/Week-6-Project.git
 
 # Built With
 
-* [Bootstrap](https://getbootstrap.com/)
+* [Bootstrap 5](https://getbootstrap.com/)
 
 
 # Functionality RoadMap

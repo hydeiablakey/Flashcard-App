@@ -1,8 +1,8 @@
-/* #flashcardWindow {
-    padding: 5px;
-} */
+/*
+Full page styling
+*/
 html {
-    cursor:url('pink.cur'), default;
+    cursor:url('normal.cur'), default;
 }
 
 
@@ -15,24 +15,61 @@ html {
 
 body {
     padding: 5px;
-    background-color: var(--lighestpink);
+    background-color: var(--lighestpink) !important;
 
 }
 
-/* #flashCardApp {
-    text-align: center;
-    
-} */
+
+/*
+Button styling
+*/
+
+.btn {
+    border: 1px solid var(--darkpink) !important; 
+    color: black !important;
+}
+
+
+#addBtn, #delBtn, #exitBtn {
+
+    margin-bottom: 5px;
+
+}
+
+#exitBtn {  
+    float: right;
+    width: 15%;
+    color: black;
+ 
+}
+
+#submitBtn {
+    width:100%;
+    margin-top: 10px;
+}
+
+#reveal:focus {
+    outline: thin dotted;
+}
+
+
+/*
+
+Flashcard styling
+*/
 #flashcardTitle {
     font-size: 3.5em;
+    text-align: center;
 }
 
+
+.individualCard {
+    margin-bottom: 10px;
+}
 .newCard {
     border: 2px solid var(--darkpink);
     background-color: var(--lightpink);
     padding: 1.25rem; 
-    /* padding: 10px; */
-    /* margin: 10px; */
     width: 100%; 
     height: 100%;
     
@@ -49,24 +86,22 @@ body {
     font-size: 30px;
   
 }
+.actionBtns {
+    text-align: center;
+    margin: 10px;
+}
 
-/* .keyAnswer {
-    
-} */
-
-#showBtn, #delBtn {
-    border: 2px solid var(--darkpink);
-    color: black;
-    
-
-    
+.centerCard {
+    display: flex;
+    justify-content: center;
 }
 
 .flashCard {
+
     border: 2px solid var(--darkpink);
     background-color: var(--lightpink);
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
     width: 400px; 
     height: 100%;
     border-radius: 0.25rem;
@@ -97,38 +132,19 @@ textarea, input {
     border: 2px solid var(--darkpink) !important; 
 }
 
-#submitBtn {
-    /* display: block; */
-    width:100%;
-    margin-top: 10px;
-    border: 2px solid var(--darkpink);
-    color: black;
-}
 
-#addBtn {
-    border: 2px solid var(--darkpink);
-    color: black;
-}
-
-#exitBtn {
-    border: 1px solid var(--darkpink);
-    float: right; 
-
-    background-repeat: no-repeat;
-    overflow: hidden;
-    outline: none;
-    color: black;
-}
-
-.flashCard:hover, .answerTitle:hover, .questionTitle:hover, .newCard:hover,  #submitBtn:hover, #exitBtn:hover, #addBtn:hover {
-    cursor:url('pink_select.cur'), default;
+.flashCard:hover, .answerTitle:hover, .questionTitle:hover, .btn:hover {
+    cursor:url('/cursors/normal.cur'), default !important;
 
 }
 
-/* .hide {
-    display:none; 
+textarea {
+    cursor: url('/cursors/texto.cur'), default; 
 }
 
-.show {
-    display: block; 
-} */
+.card-body {
+    background-color: var(--lighestpink) !important;
+    box-shadow: 0px 3px 14px 5px rgba(0,0,0,0.12);
+    border: 2px solid var(--mediumpink) !important;
+
+}

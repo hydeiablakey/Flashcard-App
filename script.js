@@ -52,24 +52,20 @@ class Flashcard {
           
             if (key && value) {  
 
-            let div = document.createElement("div"); 
-            div.setAttribute('class', 'col-6');
+            let div = document.createElement("div");
+            div.classList.add("col-4", "individualCard") 
             div.setAttribute('id', idVal);
             div.innerHTML = 
             `   <div class="newCard row">
-
                     <p class="keyQuestion "> ${key}</p>
-                
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${idVal}" aria-expanded="false" aria-controls="collapseExample${idVal}">
-                    Show answer
+                    <button id="reveal" class="btn " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${idVal}" aria-expanded="false" aria-controls="collapseExample${idVal}">
+                    Reveal Answer
                     </button>
-                
                     <div class="collapse" id="collapseExample${idVal}">
                         <div class="card card-body">
                         ${value}
                         </div>
                     </div>
-
                 </div> `
 
 
@@ -112,20 +108,20 @@ class Flashcard {
     }
 
 
-    // addTitle() {
-    //     let personPrompt = prompt("Enter your name to personalize your flashcard title or leave blank for generic name.")
-    //     let newTitle = document.getElementById("flashcardTitle");
-    //     if (personPrompt === "") {
-    //         newTitle.innerHTML = `Flashcards`;
-    //     } else {
-    //         newTitle.innerHTML = `${personPrompt}'s Flashcards`
+    addTitle() {
+        let personPrompt = prompt("Enter your name to personalize your flashcard title or leave blank for generic name.")
+        let newTitle = document.getElementById("flashcardTitle");
+        if (personPrompt === "") {
+            newTitle.innerHTML = `Flashcards`;
+        } else {
+            newTitle.innerHTML = `${personPrompt}'s Flashcards`
 
-    //     }
-    // }
+        }
+    }
 }
 
 let newCard = new Flashcard(); 
-// newCard.addTitle(); 
+newCard.addTitle(); 
 newCard.addCard(); 
 newCard.removeCard(); 
 newCard.submitCard();
